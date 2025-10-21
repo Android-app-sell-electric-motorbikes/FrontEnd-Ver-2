@@ -1,76 +1,48 @@
-# ⚡ EVSaleApp – Ứng dụng bán xe máy điện
+# EVSaleApp — Android EV Sales Shop
 
-EVSaleApp là một ứng dụng Android giúp người dùng **mua, xem thông tin và quản lý xe điện** một cách tiện lợi.  
-Ứng dụng được phát triển với **Java + XML**, kết hợp **Google Maps SDK** để hiển thị vị trí trạm sạc, **Firebase** để gửi thông báo, và **Retrofit + Hilt** để kết nối API.
-
----
-
-## 🚀 Tính năng chính
-
-### 👤 **Người dùng (Customer)**
-- **Đăng ký / Đăng nhập**: Xác thực tài khoản người dùng.
-- **Xem danh sách xe điện**: Hiển thị thông tin chi tiết, giá và hình ảnh từng mẫu xe.
-- **Chi tiết sản phẩm**: Xem mô tả, đánh giá, thông số kỹ thuật xe.
-- **Thêm vào giỏ hàng**: Quản lý giỏ hàng, tăng giảm số lượng sản phẩm.
-- **Thanh toán / Billing**: Nhập địa chỉ, số điện thoại và xác nhận đơn hàng.
-- **Xem trạm sạc (Map)**: Hiển thị vị trí các trạm sạc trên bản đồ Google Maps.
-- **Chat với cửa hàng**: Gửi và nhận tin nhắn với admin (realtime chat).
+**Mô tả:**  
+EVSaleApp là ứng dụng Android cho bán sản phẩm xe điện (EV). Người dùng có thể duyệt sản phẩm, xem chi tiết, thêm vào giỏ, thanh toán, chat với cửa hàng, xem bản đồ cửa hàng và nhận thông báo.
 
 ---
 
-### 🧑‍💼 **Nhân viên (Staff)**
-- **Quản lý sản phẩm**: Thêm, sửa, xóa xe điện.
-- **Quản lý đơn hàng**: Xem danh sách đơn hàng của khách.
+## Tính năng chính
+1. **Authentication** — Đăng ký / Đăng nhập (username, password, email, phone, address).  
+2. **Product list** — Lấy dữ liệu từ API, hiển thị ảnh, tên, giá, mô tả ngắn; hỗ trợ sort/filter.  
+3. **Product detail** — Nhiều ảnh, specs, chọn số lượng, Add to Cart.  
+4. **Cart** — Quản lý sản phẩm trong giỏ, update quantity, remove, tổng tiền động.  
+5. **Billing** — Tích hợp thanh toán (VNPay / PayPal / ZaloPay) qua backend.  
+6. **Notification (Cart badge)** — Hiển thị số lượng mặt hàng; sử dụng FCM + NotificationCompat.  
+7. **Map** — Google Maps hiển thị cửa hàng, mở chỉ đường.  
+8. **Chat** — Chat real-time (Firebase Firestore/Realtime DB) hoặc custom socket.  
 
 ---
 
-### 👨‍💻 **Quản trị viên (Admin)**
-- **Dashboard tổng quan**: Thống kê doanh số, sản phẩm, khách hàng.
-- **Quản lý người dùng**: Thêm hoặc khóa tài khoản.
+## Cấu trúc chính (tóm tắt từ repo)
+- `app/src/main/AndroidManifest.xml`
+- `app/src/main/java/com/evsaleapp/...`:
+  - `ui/` (fragments & activities: `ProductListFragment`, `ProductDetailActivity`, `CartFragment`, `ChatActivity`, `MapActivity`, `LoginActivity`, `RegisterActivity`, `BillingActivity`, v.v.)
+  - `data/api/` (`ApiClient`, `ApiService`)
+  - `data/repository/` (`ProductRepository`, `CartManager`, `SharedPrefManager`)
+  - `model/` (`Product`, `ChatMessage`, v.v.)
+  - `utils/` (`CartManager`, helpers)
+- `res/layout/` (activity/fragment/item layouts)
+- `res/drawable/`, `res/mipmap/`, `res/anim/`, `res/values/` (colors, strings, themes)
+- `build.gradle`, `gradle.properties`, `local.properties`
 
 ---
 
-## 🗺️ Danh sách màn hình (UI)
-
-| Màn hình | Tên file | Mô tả |
-|-----------|-----------|-------|
-| **Màn hình đăng nhập** | `LoginActivity` | Người dùng nhập email và mật khẩu |
-| **Màn hình đăng ký** | `RegisterActivity` | Tạo tài khoản mới |
-| **Trang chủ khách hàng** | `CustomerDashboardActivity` / `fragment_home.xml` | Danh sách xe và banner |
-| **Chi tiết sản phẩm** | `ProductDetailActivity` | Xem chi tiết thông tin xe |
-| **Giỏ hàng** | `CartFragment`, `CartAdapter` | Quản lý giỏ hàng, tính tổng tiền |
-| **Thanh toán** | `BillingActivity` | Điền thông tin nhận hàng và thanh toán |
-| **Bản đồ trạm sạc** | `MapActivity` | Hiển thị trạm sạc bằng Google Maps |
-| **Chat với cửa hàng** | `ChatActivity`, `ChatAdapter` | Trò chuyện trực tuyến với admin |
-| **Dashboard Admin/Staff** | `AdminDashboardActivity`, `StaffDashboardActivity` | Giao diện quản trị và nhân viên |
+## Yêu cầu môi trường
+- Android Studio Bumblebee/Chipmunk hoặc mới hơn
+- JDK 11+
+- Android SDK (compileSdkVersion >= 33 đề nghị)
+- Google Maps API key (nếu dùng bản đồ)
+- Firebase project (nếu dùng Firebase Chat/FCM)
+- Backend REST API (URL cấu hình trong `local.properties` hoặc `gradle.properties`)
 
 ---
 
-## 🧩 Cấu trúc thư mục chính
-
----
-
-## 🧠 Công nghệ sử dụng
-
-| Công nghệ | Mục đích |
-|------------|----------|
-| **Java / XML** | Ngôn ngữ lập trình chính |
-| **Hilt (Dagger)** | Dependency Injection |
-| **Retrofit + Gson + OkHttp** | Gọi API, xử lý dữ liệu JSON |
-| **Glide / Picasso** | Load ảnh |
-| **Google Maps SDK** | Hiển thị bản đồ và trạm sạc |
-| **Firebase Cloud Messaging** | Gửi thông báo tới người dùng |
-| **RecyclerView** | Hiển thị danh sách sản phẩm và tin nhắn |
-| **ViewBinding** | Liên kết UI nhanh gọn |
-| **Material Design 3** | Giao diện hiện đại và trực quan |
-
----
-
-## ⚙️ Cài đặt & Chạy ứng dụng
-
-### 1️⃣ Clone project
-```bash
-git clone https://github.com/Android-app-sell-electric-motorbikes/FrontEnd-Ver-2.git
-cd FrontEnd-Ver-2
-
-
+## Cài đặt & chạy
+1. Clone project:
+   ```bash
+   git clone <your-repo-url>
+   cd <project-folder>
