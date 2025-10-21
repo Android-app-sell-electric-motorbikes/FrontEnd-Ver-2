@@ -48,3 +48,29 @@ EVSaleApp là một ứng dụng Android giúp người dùng **mua, xem thông 
 
 ## 🧩 Cấu trúc thư mục chính
 
+---
+
+## 🧠 Công nghệ sử dụng
+
+| Công nghệ | Mục đích |
+|------------|----------|
+| **Java / XML** | Ngôn ngữ lập trình chính |
+| **Hilt (Dagger)** | Dependency Injection |
+| **Retrofit + Gson + OkHttp** | Gọi API, xử lý dữ liệu JSON |
+| **Glide / Picasso** | Load ảnh |
+| **Google Maps SDK** | Hiển thị bản đồ và trạm sạc |
+| **Firebase Cloud Messaging** | Gửi thông báo tới người dùng |
+| **RecyclerView** | Hiển thị danh sách sản phẩm và tin nhắn |
+| **ViewBinding** | Liên kết UI nhanh gọn |
+| **Material Design 3** | Giao diện hiện đại và trực quan |
+
+---
+
+## ⚙️ Cài đặt & Chạy ứng dụng
+
+### 1️⃣ Clone project
+```bash
+git clone https://github.com/Android-app-sell-electric-motorbikes/FrontEnd-Ver-2.git
+cd FrontEnd-Ver-2
+
+
