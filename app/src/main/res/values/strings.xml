@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">EVSaleApp</string>
+    <string-array name="user_roles">
+        <item>customer</item>
+        <item>staff</item>
+        <item>admin</item>
+    </string-array>
+    <string name="vietmap_api_key">ff64255f93fea457ec91ebb08b760f8f2e85ed1f7112eb4a</string>
+    <string-array name="vehicle_categories">
+        <item>Tất cả</item>
+        <item>Xe máy điện</item>
+        <item>Xe đạp điện</item>
+        <item>Ô tô điện</item>
+        <item>Xe tay ga điện cao cấp</item>
+        <item>Xe mini và địa hình</item>
+        <item>Xe điện thương mại</item>
+    </string-array>
+
+</resources>

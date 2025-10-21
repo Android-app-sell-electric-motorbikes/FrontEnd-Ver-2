@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "705212691551",
+    "project_id": "evsaleapp",
+    "storage_bucket": "evsaleapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705212691551:android:bfd43d84fec61c5ea557ea",
+        "android_client_info": {
+          "package_name": "com.example.evsaleapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpEYBgtwYGShO6pjMeAkSCcaPWVxzpL9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
