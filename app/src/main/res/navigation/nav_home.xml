@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/productListFragment"
-        android:name="com.example.evsaleapp.ui.customer.fragments.ProductListFragment"
+        android:name="com.example.otodiensale.ui.customer.fragments.ProductListFragment"
         android:label="Xe"
         tools:layout="@layout/fragment_product_list" />
 
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.evsaleapp.ui.customer.fragments.CartFragment"
+        android:name="com.example.otodiensale.ui.customer.fragments.CartFragment"
         android:label="Giỏ hàng"
         tools:layout="@layout/fragment_cart" />
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.evsaleapp.ui.customer.fragments.ProfileFragment"
+        android:name="com.example.otodiensale.ui.customer.fragments.ProfileFragment"
         android:label="Tài khoản"
         tools:layout="@layout/fragment_profile" />
 </navigation>

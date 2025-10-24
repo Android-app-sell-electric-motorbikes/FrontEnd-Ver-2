@@ -1,21 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutChat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white">
 
+    <!-- Danh sách tin nhắn -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewChat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"/>
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+    <!-- Khu vực nhập tin nhắn -->
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@color/purple_50">
 
         <EditText
             android:id="@+id/editMessage"
@@ -23,15 +30,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Nhập tin nhắn..."
-            android:background="@drawable/rounded_edittext_bg"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:background="@drawable/bg_edittext"
+            android:inputType="text"
+            android:textSize="16sp" />
 
         <ImageButton
             android:id="@+id/btnSend"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/ic_send"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Gửi"/>
+            android:background="@android:color/transparent"
+            android:contentDescription="Gửi"
+            app:tint="@color/purple_500"
+            android:layout_marginStart="8dp" />
     </LinearLayout>
+
 </LinearLayout>

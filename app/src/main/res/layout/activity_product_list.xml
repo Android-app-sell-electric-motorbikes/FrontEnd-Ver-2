@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout ... >
+<androidx.recyclerview.widget.RecyclerView
+android:id="@+id/recycler"
+android:layout_width="match_parent"
+android:layout_height="match_parent"/>
+<ProgressBar
+android:id="@+id/progress"
+android:layout_centerInParent="true"
+android:visibility="gone"
+android:layout_width="48dp"
+android:layout_height="48dp"/>
+    </RelativeLayout>

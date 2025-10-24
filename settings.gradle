@@ -1,9 +1,10 @@
+// D:/EVSaleApp/settings.gradle
+
 pluginManagement {
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
-        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -12,9 +13,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
     }
 }
 
-rootProject.name = "EVSaleApp"
-include(":app")
+rootProject.name = "OtoDienSaleShop"
+include ':app'

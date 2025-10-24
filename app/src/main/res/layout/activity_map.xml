@@ -1,6 +1,28 @@
-<fragment
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/map_fragment"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    tools:context=".ui.map.MapActivity">
+
+    <!-- Bản đồ Google -->
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Nút định vị lại vị trí hiện tại -->
+    <ImageButton
+        android:id="@+id/btnMyLocation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_circle_white"
+        android:padding="10dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:contentDescription="Vị trí của tôi" />
+
+</FrameLayout>

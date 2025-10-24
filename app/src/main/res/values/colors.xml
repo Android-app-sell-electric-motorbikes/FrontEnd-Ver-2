@@ -1,8 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1976D2</color>
-    <color name="colorPrimaryDark">#0D47A1</color>
-    <color name="colorAccent">#FFC107</color>
-    <color name="colorText">#212121</color>
-    <color name="colorBackground">#E0E0E0</color>
-    <color name="colorCard">#FFFFFF</color>
+    <!-- 🎨 Màu chủ đạo -->
+    <color name="electric_blue">#007AFF</color>
+    <color name="deep_blue">#0048A2</color>
+    <color name="light_blue">#E6F0FF</color>
+
+    <!-- 🌿 Màu phụ -->
+    <color name="teal_500">#00BFA6</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_500">#9E9E9E</color>
+    <color name="gray_800">#424242</color>
+
+    <!-- 🔤 Màu chữ -->
+    <color name="text_primary">#1C1C1C</color>
+    <color name="text_secondary">#616161</color>
+    <color name="text_light">#FFFFFF</color>
+
+    <!-- 🌙 Nền tối -->
+    <color name="dark_bg">#121212</color>
+    <color name="dark_surface">#1E1E1E</color>
+
+    <!-- ⚠️ Màu trạng thái -->
+    <color name="success_green">#00C853</color>
+    <color name="warning_orange">#FFA000</color>
+    <color name="error_red">#D32F2F</color>
 </resources>
